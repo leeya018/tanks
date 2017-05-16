@@ -1,0 +1,62 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#square {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: relative;
+		}
+		#rect {
+			width: 190px;
+			height: 20px;
+			background: red;
+			position: relative;
+			top:-60px;
+		}
+		#tank {
+		/*			height: auto; 
+		width: auto; */
+		position: relative;
+		background: url("img/tank2.png"); 
+		/*background-size:contain;*/
+		/*transform: scale(0.5, 0.5);*/
+		width: 220px;
+		height: 120px;
+
+
+}
+
+
+
+</style>
+
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="config.js"></script>
+<script src="tank.js"></script>
+</head>
+<body>
+	<div id="tank">
+<!-- 	<div id="square"></div>
+	<div id="rect"></div>	 -->
+</div>
+
+<script type="text/javascript">
+	var t = new Tank(421,79);
+	var t1 = new Tank(200,200,0);
+	alert(t.ifCrush(t1));
+	t.getPosition();
+	t1.getPosition();
+	// t.changeColor();
+		// r.down(21);
+		// t.start();
+// t.getPosition();
+	</script>
+
+</body>
+</html>
