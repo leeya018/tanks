@@ -7,24 +7,42 @@ var tankConst = {
 	boundTop : 0,
 	boundBottom : -570,
 	boundRight : 1290,
-	boundLeft : 0,
-	lifePoints : 100,
-	hitPoints  : 10
+	boundLeft : 0
+	// lifePoints : 100,
+	// hitPoints  : 10 //in case I got hit
 };
 
 
-var weaponConst = {
-imageUrl:'',
-rateFire:,
-power
+// var weaponConst = {
+// imageUrl:'',
+// rateFire:,
+// power
 
-}
+// }
 
-level - numlevel, tanksArray-with new commandby name
-// pull from DB - 
+//mimic a DB 
+weaponRow = {
+	"name" : "bullet1",
+	 "fireRate": 100,
+	  "damage" : 10,
+	   "image": 'img/bullet4.png',
+	   "width" : 20,
+	   "height" : 10 
+};
 
-weapons - name, fireRate, damage, image ,width,height
+tankRow = {
+	"name" : "tank2",
+	 "lifePoints": 100,
+	   "image": 'img/tank2.png',
+	   "width" : 220,
+	   "height" : 120 
+};
 
-tanks - name ,lifePoints,image,width, height
+// level - numlevel, tanksArray-with new commandby name
+// // pull from DB - 
 
-purchases - userName, levelgame,tankname,weaponname
+// weapons - name, fireRate, damage, image ,width,height
+
+// tanks - name ,lifePoints,image,width, height
+
+// purchases - userName, levelgame,tankname,weaponname

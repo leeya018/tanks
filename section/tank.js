@@ -1,8 +1,7 @@
 
 class Tank {
 
-	constructor(posHor, posVer,tankLevel,imageUrl) {
-		this.tankLevel = tankLevel;
+	constructor(posHor, posVer,tankRow) {
 		this.posHor = posHor;
 		this.posVer = posVer;
 		this.boundTop = tankConst.boundTop;
@@ -10,14 +9,14 @@ class Tank {
 		this.boundRight = tankConst.boundRight;
 		this.boundLeft = tankConst.boundLeft;
 		this.money = 0;
-		this.posHorEnd = this.posHor + tankConst.width;
-		this.posVerEnd = this.posVer + tankConst.height;
-		this.lifePoints = tankConst.lifePoints;
-		this.imageUrl = imageUrl;
+		this.posHorEnd = this.posHor + tankRow["width"];
+		this.posVerEnd = this.posVer + tankRow["height"];
+		this.lifePoints = tankRow["lifePoints"];
+		this.imageUrl = tankRow["image"];
 		this.changePosition();
-		this.createTangImg();
+		this.createTankImg();
 	}
-createTangImg(){
+createTankImg(){
 	$("#tank").css('background-image', 'url(' + this.imageUrl + ')');
 }
 	changePosition(){
