@@ -1,10 +1,30 @@
 
 
+var tankConst = {
+	width : 220,
+	height : 120,
 
-const width = 220;
-const height = 120;
+	boundTop : 0,
+	boundBottom : -570,
+	boundRight : 1290,
+	boundLeft : 0,
+	lifePoints : 100,
+	hitPoints  : 10
+};
 
-const boundTop = 0;
-const boundBottom = -570;
-const boundRight = 1290;
-const boundLeft = 0;
+
+var weaponConst = {
+imageUrl:'',
+rateFire:,
+power
+
+}
+
+level - numlevel, tanksArray-with new commandby name
+// pull from DB - 
+
+weapons - name, fireRate, damage, image ,width,height
+
+tanks - name ,lifePoints,image,width, height
+
+purchases - userName, levelgame,tankname,weaponname

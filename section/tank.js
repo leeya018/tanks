@@ -1,18 +1,28 @@
 
 class Tank {
 
-	constructor(posHor, posVer,tankLevel) {
+	constructor(posHor, posVer,tankLevel,imageUrl) {
 		this.tankLevel = tankLevel;
 		this.posHor = posHor;
 		this.posVer = posVer;
-		this.boundTop = boundTop;
-		this.boundBottom = boundBottom;
-		this.boundRight = boundRight;
-		this.boundLeft = boundLeft;
+		this.boundTop = tankConst.boundTop;
+		this.boundBottom = tankConst.boundBottom;
+		this.boundRight = tankConst.boundRight;
+		this.boundLeft = tankConst.boundLeft;
 		this.money = 0;
-		this.posHorEnd = this.posHor + width;
-		this.posVerEnd = this.posVer + height;
-
+		this.posHorEnd = this.posHor + tankConst.width;
+		this.posVerEnd = this.posVer + tankConst.height;
+		this.lifePoints = tankConst.lifePoints;
+		this.imageUrl = imageUrl;
+		this.changePosition();
+		this.createTangImg();
+	}
+createTangImg(){
+	$("#tank").css('background-image', 'url(' + this.imageUrl + ')');
+}
+	changePosition(){
+		$("#tank").css({"left": this.posHor+"px"});
+		$("#tank").css({"bottom": this.posVer+"px"});
 	}
 
 	
@@ -76,14 +86,27 @@ $(document).keydown(self,function(e) {
 getPosition(){
 	console.log("bounds  :" + this.posHor + " , "+this.posVer + " , "+this.posHorEnd + " , "+this.posVerEnd+"<br>");
 }
+//ifCrush - can be a tank or a bullet
 ifCrush(tankOther){
-if(this.posHor >= tankOther.posHor && this.posHor <= tankOther.posHorEnd
-	||this.posVer >= tankOther.posVer && this.posVer <= tankOther.posVerEnd
-	||this.posHorEnd >= tankOther.posHor && this.posHorEnd <= tankOther.posHorEnd
-	||this.posVerEnd >= tankOther.posVer && this.posVerEnd <= tankOther.posVerEnd){
-	return true;
+	if(this.posHor >= tankOther.posHor && this.posHor <= tankOther.posHorEnd
+		||this.posVer >= tankOther.posVer && this.posVer <= tankOther.posVerEnd
+		||this.posHorEnd >= tankOther.posHor && this.posHorEnd <= tankOther.posHorEnd
+		||this.posVerEnd >= tankOther.posVer && this.posVerEnd <= tankOther.posVerEnd){
+		return true;
 }
 return false;
+}
+
+hit(tankOther){
+	if(ifCrush(tankOther)){
+		this.lifePoints -= tankConst.hitPoints;
+		if(this.gameOver()){
+			alert("GAME OVER");
+		}
+	}
+}
+gameOver(){
+	return this.lifePoints === 0;
 }
 }//end class
 

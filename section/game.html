@@ -22,7 +22,7 @@
 		/*			height: auto; 
 		width: auto; */
 		position: relative;
-		background: url("img/tank2.png"); 
+		/*background: url("img/tank2.png"); */
 		/*background-size:contain;*/
 		/*transform: scale(0.5, 0.5);*/
 		width: 220px;
@@ -47,14 +47,14 @@
 </div>
 
 <script type="text/javascript">
-	var t = new Tank(421,79);
-	var t1 = new Tank(200,200,0);
-	alert(t.ifCrush(t1));
-	t.getPosition();
-	t1.getPosition();
-	// t.changeColor();
+	var t = new Tank(100,-80,0,"img/tank2.png"); // first is positive, second is negative
+	
+	// var t1 = new Tank(200,200,0);
+	// alert(t.ifCrush(t1));
+	// t.getPosition();
+	// t1.getPosition();
 		// r.down(21);
-		// t.start();
+		t.start();
 // t.getPosition();
 	</script>
 
