@@ -24,7 +24,7 @@
 	<title></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 	<script src="config.js"></script>
-		<script src="bullet.js"></script>
+	<script src="bullet.js"></script>
 	<script src="tank.js"></script>
 
 </head>
@@ -33,16 +33,13 @@
 	<div id="bullet"></div>
 
 	<script type="text/javascript">
-	var t = new Tank(321,-200,tankRow); // first is positive, second is negative
-	var b = new Bullet(100,-100,weaponRow); 
-	// var t1 = new Tank(100,0,tankRow);
-	// alert(t.ifCrush(t1));
-	// t.getPosition();
-	// t1.getPosition();
-		// r.down(21);
-		t.start();
-// t.getPosition();
-</script>
+	// var t = new Tank(321,-200,tankRow); // first is positive, second is negative
+	// var b = new Bullet(100,-100,weaponRow); 
+	var t1 = new Tank(100,0,tankRow);
+	t1.start();
+	t1.fire();
+		// b.start();
+	</script>
 
 </body>
 </html>

@@ -14,12 +14,13 @@ class Tank {
 		this.posVerEnd = this.posVer + tankRow["height"];
 		this.lifePoints = tankRow["lifePoints"];
 		this.imageUrl = tankRow["image"];
+		this.ammo = 100;
 		this.changePosition();
 		this.createTankImg();
 	}
-createTankImg(){
-	$("#tank").css('background-image', 'url(' + this.imageUrl + ')');
-}
+	createTankImg(){
+		$("#tank").css('background-image', 'url(' + this.imageUrl + ')');
+	}
 	changePosition(){
 		$("#tank").css({"left": this.posHor+"px"});
 		$("#tank").css({"bottom": this.posVer+"px"});
@@ -62,7 +63,6 @@ createTankImg(){
 // this.left(30);
 var self = this;
 $(document).keydown(self,function(e) {	
-	// alert("self");
 	switch(e.which) {
 
         case 37: // left
@@ -77,10 +77,19 @@ $(document).keydown(self,function(e) {
           case 40: // down
           self.down(30);
           break;
+          case 32: // down
+          self.fire();
+          break;
 
           default: return;
       }
   });
+}
+
+fire(){
+	this.ammo--;
+	var b = new Bullet(83,23,weaponRow);
+	b.start();
 }
 
 getPosition(){
