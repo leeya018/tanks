@@ -4,6 +4,7 @@ class Tank {
 	constructor(posHor, posVer,tankRow) {
 		this.posHor = posHor;
 		this.posVer = posVer;
+		this.fireRate = tankRow["fireRate"];
 		this.boundTop = tankConst.boundTop;
 		this.boundBottom = tankConst.boundBottom;
 		this.boundRight = tankConst.boundRight;

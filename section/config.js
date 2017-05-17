@@ -23,26 +23,28 @@ var tankConst = {
 //mimic a DB 
 weaponRow = {
 	"name" : "bullet1",
-	 "fireRate": 100,
-	  "damage" : 10,
-	   "image": 'img/bullet4.png',
-	   "width" : 20,
-	   "height" : 10 
+	"damage" : 10,
+	"image": 'img/bullet4.png',
+	"width" : 20,
+	"height" : 10 
 };
 
 tankRow = {
 	"name" : "tank2",
-	 "lifePoints": 100,
-	   "image": 'img/tank2.png',
-	   "width" : 220,
-	   "height" : 120 
+	"fireRate": 100,
+	"lifePoints": 100,
+	"image": 'img/tank2.png',
+	"width" : 220,
+	"height" : 120 
 };
 
 // level - numlevel, tanksArray-with new commandby name
 // // pull from DB - 
 
-// weapons - name, fireRate, damage, image ,width,height
+// bullets - name, fireRate, damage, image ,width,height
 
 // tanks - name ,lifePoints,image,width, height
 
 // purchases - userName, levelgame,tankname,weaponname
+
+//

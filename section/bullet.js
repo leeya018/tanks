@@ -3,7 +3,6 @@ class Bullet{
 	constructor(posHor, posVer,weaponRow){
 		this.posHor = posHor;
 		this.posVer = posVer;
-		this.fireRate = weaponRow["fireRate"];
 		this.damage = weaponRow["damage"];
 		this.imageUrl = weaponRow["image"];
 		this.width = weaponRow["width"];
