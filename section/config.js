@@ -1,5 +1,8 @@
 
 
+
+
+
 var tankConst = {
 	width : 220,
 	height : 120,
@@ -35,8 +38,10 @@ tankRow = {
 	"lifePoints": 100,
 	"image": 'img/tank2.png',
 	"width" : 220,
-	"height" : 120 
+	"height" : 120
 };
+
+	bulletNum = 0; 
 
 // level - numlevel, tanksArray-with new commandby name
 // // pull from DB - 

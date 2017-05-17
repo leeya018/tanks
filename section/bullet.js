@@ -7,15 +7,23 @@ class Bullet{
 		this.imageUrl = weaponRow["image"];
 		this.width = weaponRow["width"];
 		this.height = weaponRow["height"];
-		this.changePosition();
+		// this.changePosition();
+		// this.createImg();
+		this.createBullet();
+	}
+	createBullet(){
+		// bulletNum ++ ;
+		$("<div></div>").attr('class','bullet').appendTo('body'); 
+		bulletNum++;
 		this.createImg();
+		this.changePosition();
 	}
 	createImg(){
-		$("#bullet").css('background-image', 'url(' + this.imageUrl + ')');
+		$(".bullet").css('background-image', 'url(' + this.imageUrl + ')');
 	}
 	changePosition(){
-		$("#bullet").css({"left": this.posHor+"px"});
-		$("#bullet").css({"bottom": this.posVer+"px"});
+		$(".bullet").css({"left": this.posHor+"px"});
+		$(".bullet").css({"bottom": this.posVer+"px"});
 	}
 
 	start(){
