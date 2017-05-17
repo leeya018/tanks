@@ -26,6 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			}else{
 				$_SESSION["userName"] = $_POST["userName"];
 				$_SESSION["firstName"] = $_POST["firstName"];
+				$_SESSION["lastName"] = $_POST["lastName"];
 				enterUserToDB($_POST["firstName"],$_POST["lastName"],$_POST["email"],$_POST["userName"],$_POST["picture"],$_POST["password"], $conn);
 
 			}
