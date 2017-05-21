@@ -36,10 +36,12 @@
 	<script type="text/javascript">
 	// var t = new Tank(321,-200,tankRow); // first is positive, second is negative
 	// var b = new Bullet(100,-100,weaponRow); 
+
 	var t1 = new Tank(100,0,tankRow);
 	t1.start();
 	// t1.fire();
 		// b.start();
+
 	</script>
 
 </body>

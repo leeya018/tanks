@@ -1,11 +1,11 @@
 <?php 
-require 'config.php';
+require 'configDB.php';
 session_start();
 
 $sql = "CREATE TABLE users (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-firstname VARCHAR(30) NOT NULL,
-lastname VARCHAR(30) NOT NULL,
+firstName VARCHAR(30) NOT NULL,
+lastName VARCHAR(30) NOT NULL,
 email VARCHAR(50) NOT NULL,
 userName VARCHAR(50) NOT NULL,
 picture VARCHAR(50) NOT NULL,

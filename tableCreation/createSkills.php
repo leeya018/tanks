@@ -1,7 +1,7 @@
 
 
 <?php 
-require 'config.php';
+require 'configDB.php';
 session_start();
 
 $sql = "CREATE TABLE skills (

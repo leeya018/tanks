@@ -2,10 +2,21 @@
 require 'configDB.php';
 session_start();
 
+function addPurchaceFirstTime($conn){
+	$sql= "INSERT INTO purchases (userName,levelGame,tankName,weaponName
+) VALUES ('". $_SESSION["userName"]."',1,'tank1','bullet1')";
+if($conn->query($sql)){
+	echo "new row added to purchaces table". "<br>";
+}else {
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+}
+
 function enterUserToDB($firstName,$lastName,$email,$userName,$picture ,$password,$conn){
 	$sql= "INSERT INTO users (firstName,lastName,email,userName,picture,password) VALUES ('".$firstName."','".$lastName."','".$email."','".$userName."','".$picture."','".md5($password)."')";
 	if($conn->query($sql)){
-		echo "new row added to users table";
+		echo "new row added to users table" . "<br>";
+		addPurchaceFirstTime($conn);
 	}else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}

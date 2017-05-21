@@ -3,7 +3,7 @@ require 'configDB.php';
 session_start();
 
 if(isset($_SESSION["userName"]) ){//if the session is exist
-	 echo $_SESSION["userName"];
+	echo $_SESSION["userName"];
 	header('Location: index.php');
 }
 
@@ -17,11 +17,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$result = $conn->query($sql);
 			$row_num = $result->num_rows;
 			if($row_num > 0){
+				echo "fsafdsafdsa";
 				$row = $result->fetch_assoc();
+				print_r($row) ;
 				$_SESSION["userName"] = $row["userName"];
 				$_SESSION["firstName"] = $row["firstName"];
 				$_SESSION["lastName"] = $row["lastName"];
-				header('Location: index.php');
+				// header('Location: index.php');
 			}else{
 				echo "user or password are not correct";
 			}
@@ -40,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<title></title>
 </head>
 <body>
-<h2>login</h2>
+	<h2>login</h2>
 	<form method="post" enctype="multipart/form-data">
 		<input type="text" name="userName" placeholder="enter user name">
 		<input type="text" name="password" placeholder="enter password">
